@@ -14,5 +14,6 @@ final class HomeController
 
 	public function index(): void
 	{
+		echo(App::instance()->render('Home/Index'));
 	}
 }
