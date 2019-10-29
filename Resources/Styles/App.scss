@@ -14,7 +14,9 @@ $colors: (
 
 @import 'Colors';
 
-$variables: ();
+$variables: (
+	'transition': 0.25s,
+);
 
 @import
 	'Variables',
@@ -26,7 +28,8 @@ $variables: ();
 @include html;
 
 $elements: (
-	'body', 'div', 'h3', 'li', 'main', 'section', 'ul',
+	'article', 'body', 'div', 'figure', 'h3', 'img', 'main', 'section',
+	'a', 'span',
 	'path', 'svg',
 );
 
@@ -41,4 +44,5 @@ $elements: (
 @import
 	'Modules',
 
+	'Partials/Articles',
 	'Partials/Features';
