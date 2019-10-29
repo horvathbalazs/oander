@@ -18,6 +18,12 @@
 				{% block layout %}
 				{% endblock %}
 			</main>
+
+			<aside class="elevator">
+				<button class="elevator__button" title="Back to top" type="button">
+					{% include 'Icons/Angle.twig' with { 'block': 'elevator', 'title': 'Back to top' } only %}
+				</button>
+			</aside>
 		</div>
 	</body>
 </html>

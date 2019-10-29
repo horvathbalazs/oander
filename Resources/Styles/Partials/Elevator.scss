@@ -1,0 +1,28 @@
+.elevator {
+	border-top: 0.0625rem solid rgba(color('night-rider'), 0.15);
+	width: 100%;
+
+	.elevator__button {
+		background-color: color('white');
+		padding: 1.25rem;
+		@include transition(background-color variable('transition'));
+		width: 100%;
+
+		&:hover {
+			background-color: color('nero');
+		}
+	}
+
+	.elevator__icon {
+		height: 0.9375rem;
+		margin: 0rem auto;
+		width: 1.5625rem;
+	}
+
+	.elevator__path {
+		fill: none;
+		stroke: color('rodeo-dust');
+		stroke-linecap: round;
+		stroke-width: 2;
+	}
+}
