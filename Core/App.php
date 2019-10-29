@@ -21,4 +21,17 @@ final class App
 			$this->$method();
 		}
 	}
+
+	public function dispatch(
+		string $controller,
+		string $action = 'index'
+	): void {
+		$class = sprintf('Oander\App\Controllers\%sController', $controller);
+
+		if (class_exists($class)) {
+			foreach ([ 'before', $action, 'after' ] as $method) {
+				$class::instance()->$method();
+			}
+		}
+	}
 }

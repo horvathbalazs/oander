@@ -6,4 +6,4 @@ spl_autoload_register(function (string $class): void {
 	}
 });
 
-Oander\Core\App::instance();
+Oander\Core\App::instance()->dispatch('Home');
