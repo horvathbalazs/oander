@@ -16,4 +16,6 @@ $colors: (
 
 $variables: ();
 
-@import 'Variables';
+@import
+	'Variables',
+	'Functions';
