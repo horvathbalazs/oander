@@ -1,0 +1,102 @@
+.features {
+	background-color: color('nero');
+	width: 100%;
+
+	.features__container {
+		margin: 0rem auto;
+		max-width: 85.625rem;
+		width: 100%;
+	}
+
+	.features__row {
+		@include flex(row, start, stretch);
+	}
+
+	.features__item {
+		padding: 2.5rem 1.25rem;
+		width: 50%;
+	}
+
+	.features__separator {
+		background-color: rgba(color('rodeo-dust'), 0.2);
+
+		&.features__separator--horizontal {
+			height: 0.0625rem;
+		}
+
+		&.features__separator--vertical {
+			min-width: 0.0625rem;
+			width: 0.0625rem;
+		}
+	}
+
+	.features__icon {
+		height: 3.75rem;
+		margin: 0rem auto 1.25rem;
+		width: 3.75rem;
+	}
+
+	.features__path {
+		fill: color('rodeo-dust');
+	}
+
+	.features__name {
+		color: color('white');
+		font-size: 0.875rem;
+		font-weight: 600;
+		line-height: 1.125rem;
+		text-align: center;
+	}
+
+	.features__list {
+		display: none;
+	}
+}
+
+@include breakpoint('tablet') {
+	.features {
+		padding: 1.875rem 0rem;
+
+		.features__container {
+			padding: 0rem 1.875rem;
+		}
+
+		.features__group {
+			display: none;
+		}
+
+		.features__list {
+			@include flex(row, start, stretch);
+			margin: 0rem -0.625rem;
+		}
+
+		.features__item {
+			padding: 0rem 0.625rem;
+			width: 25%;
+		}
+	}
+}
+
+@include breakpoint('laptop') {
+	.features {
+		padding: 2.5rem 0rem;
+
+		.features__container {
+			padding: 0rem 2.5rem;
+		}
+
+		.features__list {
+			margin: -0.3125rem 0.9375rem;
+		}
+
+		.features__item {
+			padding: 0.3125rem 0.9375rem;
+		}
+
+		.features__name {
+			font-size: 1.125rem;
+			font-weight: 700;
+			line-height: 1.375rem;
+		}
+	}
+}

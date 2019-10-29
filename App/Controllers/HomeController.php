@@ -14,6 +14,6 @@ final class HomeController
 
 	public function index(): void
 	{
-		echo(App::instance()->render('Home/Index'));
+		echo(App::instance()->render('Home/Index', [ 'features' => $this->getFeatures() ]));
 	}
 }
