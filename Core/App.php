@@ -5,11 +5,13 @@ namespace Oander\Core;
 final class App
 {
 	use Engine;
+	use Minify;
 	use Singleton;
 	use Vendors;
 
 	private $sequence = [
 		'vendors',
+		'minify',
 		'engine',
 	];
 
