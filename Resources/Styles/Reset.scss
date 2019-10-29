@@ -1,0 +1,379 @@
+@mixin html {
+	html {
+		@include box-sizing(border-box);
+		font: normal 400 100%/#{ 1.15 }
+		      -apple-system,
+		      BlinkMacSystemFont,
+		      'Segoe UI',
+		      Roboto,
+		      'Helvetica Neue',
+		      Helvetica,
+		      Arial,
+		      Oxygen-Sans,
+		      Ubuntu,
+		      Cantarell,
+		      sans-serif,
+		      'Apple Color Emoji',
+		      'Segoe UI Emoji',
+		      'Segoe UI Symbol';
+		height: 100%;
+		@include overflow-style(scrollbar);
+		@include tab-size(4);
+		@include tap-highlight-color(rgba(0, 0, 0, 0));
+		@include tap-highlight-color(color('transparent'));
+		@include text-size-adjust(100%);
+
+		@content;
+	}
+}
+
+@mixin reset($elements) {
+	#{ implode($elements, ',') } {
+		&, &:before, &:after{
+			background: none 50% 50%/cover no-repeat color('transparent');
+			border: 0rem none color('transparent');
+			@include box-sizing(inherit);
+			color: inherit;
+			cursor: inherit;
+			font: inherit;
+			@include prefixes(
+				('prefixes': 'webkit',  'property': 'font-smoothing', 'value': antialiased)
+				('prefixes': 'moz-osx', 'property': 'font-smoothing', 'value': grayscale)
+			);
+			margin: 0rem;
+			outline: 0rem none color('transparent');
+			@include overflow-scrolling(touch);
+			padding: 0rem;
+			position: relative;
+			text-decoration: none;
+			@include transform-origin(50% 50%);
+			vertical-align: baseline;
+		}
+	}
+
+	@if index($elements, 'a') {
+		a {
+			cursor: pointer;
+			@include text-decoration-skip(ink objects);
+			@include touch-action(manipulation);
+		}
+	}
+
+	@if index($elements, 'address') {
+		address {
+			display: block;
+		}
+	}
+
+	@if index($elements, 'article') {
+		article {
+			display: block;
+		}
+	}
+
+	@if index($elements, 'aside') {
+		aside {
+			display: block;
+		}
+	}
+
+	@if index($elements, 'button') {
+		button {
+			@include appearance(none);
+			@include border-radius(0rem);
+			cursor: pointer;
+			display: block;
+			overflow: visible;
+			text-transform: none;
+			@include touch-action(manipulation);
+		}
+	}
+
+	@if index($elements, 'canvas') {
+		canvas {
+			display: block;
+		}
+	}
+
+	@if index($elements, 'del') {
+		del {
+			text-decoration: line-through;
+		}
+	}
+
+	@if index($elements, 'desc') {
+		desc {
+			display: none;
+		}
+	}
+
+	@if index($elements, 'em') {
+		em {
+			font-style: italic;
+		}
+	}
+
+	@if index($elements, 'figcaption') {
+		figcaption {
+			display: block;
+		}
+	}
+
+	@if index($elements, 'figure') {
+		figure {
+			display: block;
+		}
+	}
+
+	@if index($elements, 'footer') {
+		footer {
+			display: block;
+		}
+	}
+
+	@if index($elements, 'h1') {
+		h1 {
+			page-break-after: avoid;
+			page-break-inside: avoid;
+		}
+	}
+
+	@if index($elements, 'h2') {
+		h2 {
+			page-break-after: avoid;
+			page-break-inside: avoid;
+		}
+	}
+
+	@if index($elements, 'h3') {
+		h3 {
+			page-break-after: avoid;
+			page-break-inside: avoid;
+		}
+	}
+
+	@if index($elements, 'h4') {
+		h4 {
+			page-break-after: avoid;
+			page-break-inside: avoid;
+		}
+	}
+
+	@if index($elements, 'h5') {
+		h5 {
+			page-break-after: avoid;
+			page-break-inside: avoid;
+		}
+	}
+
+	@if index($elements, 'h6') {
+		h6 {
+			page-break-after: avoid;
+			page-break-inside: avoid;
+		}
+	}
+
+	@if index($elements, 'header') {
+		header {
+			display: block;
+		}
+	}
+
+	[hidden] {
+		display: none;
+	}
+
+	@if index($elements, 'hr') {
+		hr {
+			height: 0rem;
+			overflow: visible;
+			width: 100%;
+		}
+	}
+
+	@if index($elements, 'img') {
+		img {
+			display: block;
+			height: auto;
+			@include interpolation-mode(bicubic);
+			max-width: 100%;
+			page-break-inside: avoid;
+			width: 100%;
+		}
+	}
+
+	@if index($elements, 'input') {
+		input {
+			@include appearance(none);
+			@include border-radius(0rem);
+			cursor: pointer;
+			display: block;
+			overflow: visible;
+			@include touch-action(manipulation);
+
+			&[readonly] {
+				cursor: default;
+			}
+		}
+	}
+
+	@if index($elements, 'ins') {
+		ins {
+			text-decoration: underline;
+		}
+	}
+
+	@if index($elements, 'label') {
+		label {
+			cursor: pointer;
+			display: block;
+			@include touch-action(manipulation);
+		}
+	}
+
+	@if index($elements, 'main') {
+		main {
+			display: block;
+		}
+	}
+
+	@if index($elements, 'nav') {
+		nav {
+			display: block;
+		}
+	}
+
+	@if index($elements, 'ol') {
+		ol {
+			list-style: none;
+		}
+	}
+
+	@if index($elements, 'section') {
+		section {
+			display: block;
+		}
+	}
+
+	@if index($elements, 'select') {
+		select {
+			@include appearance(none);
+			@include border-radius(0rem);
+			cursor: pointer;
+			display: block;
+			text-transform: none;
+			@include touch-action(manipulation);
+		}
+	}
+
+	@if index($elements, 'strong') {
+		strong {
+			font-weight: 700;
+		}
+	}
+
+	@if index($elements, 'svg') {
+		svg {
+			display: block;
+			height: auto;
+			max-width: 100%;
+			overflow: hidden;
+			page-break-inside: avoid;
+			width: 100%;
+		}
+	}
+
+	@if index($elements, 'table') {
+		table {
+			border-collapse: collapse;
+			border-spacing: 0rem;
+		}
+	}
+
+	@if index($elements, 'td') {
+		td {
+			vertical-align: top;
+		}
+	}
+
+	@if index($elements, 'template') {
+		template {
+			display: none;
+		}
+	}
+
+	@if index($elements, 'textarea') {
+		textarea {
+			@include appearance(none);
+			cursor: pointer;
+			display: block;
+			resize: none;
+			@include touch-action(manipulation);
+		}
+	}
+
+	@if index($elements, 'th') {
+		th {
+			vertical-align: top;
+		}
+	}
+
+	@if index($elements, 'time') {
+		time {
+			display: block;
+		}
+	}
+
+	@if index($elements, 'title') {
+		title {
+			display: none;
+		}
+	}
+
+	@if index($elements, 'ul') {
+		ul {
+			list-style: none;
+		}
+	}
+}
+
+@mixin body {
+	.body {
+		background-color: color('white');
+		color: color('black');
+		cursor: default;
+		height: 100%;
+		overflow-x: hidden;
+
+		@content;
+
+		&:before {
+			display: none;
+
+			@each $device in ('phone', 'tablet', 'laptop', 'desktop') {
+				@include breakpoint($device) {
+					content: $device;
+				}
+			}
+		}
+	}
+}
+
+@mixin app {
+	.app {
+		@include flex(column, start);
+		min-height: 100%;
+
+		@content;
+	}
+}
+
+@mixin main {
+	.main {
+		@include flex(column, start);
+		@include flex-grow;
+		width: 100%;
+
+		@content;
+	}
+}

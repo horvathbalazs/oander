@@ -1,0 +1,19 @@
+{
+	"dependencies": {
+		"css-loader": "^3.2.0",
+		"fibers": "^4.0.2",
+		"mini-css-extract-plugin": "^0.8.0",
+		"node-sass": "^4.13.0",
+		"sass": "^1.23.1",
+		"sass-loader": "^8.0.0",
+		"style-loader": "^1.0.0",
+		"webpack": "^4.41.2",
+		"webpack-cli": "^3.3.9",
+		"webpack-fix-style-only-entries": "^0.4.0"
+	},
+	"license": "MIT",
+	"name": "Oander",
+	"scripts": {
+		"styles": "webpack --config styles.webpack.config.js"
+	}
+}
