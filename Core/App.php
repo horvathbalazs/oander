@@ -4,9 +4,10 @@ namespace Oander\Core;
 
 final class App
 {
+	use Vendors;
 	use Singleton;
 
-	private $sequence = [];
+	private $sequence = [ 'vendors' ];
 
 	protected function init(): void
 	{
