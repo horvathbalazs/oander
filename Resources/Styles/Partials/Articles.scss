@@ -1,0 +1,144 @@
+.articles {
+	padding: 1.875rem 0rem;
+	width: 100%;
+
+	.articles__container {
+		margin: 0rem auto;
+		max-width: 85.625rem;
+		padding: 0rem 1.25rem;
+		width: 100%;
+	}
+
+	.articles__group {
+		margin: -0.625rem;
+	}
+
+	.articles__item {
+		padding: 0.625rem;
+	}
+
+	.articles__link {
+		@include box-shadow(inset 0rem 0rem 0rem 0.0625rem rgba(color('nero'), 0.1));
+		display: block;
+	}
+
+	.articles__figure:before {
+		content: ' ';
+		display: block;
+		padding-bottom: 60%;
+	}
+
+	.articles__image {
+		bottom: 0rem;
+		left: 0rem;
+		padding: 30% 50%;
+		position: absolute;
+		right: 0rem;
+		top: 0rem;
+	}
+
+	.articles__body {
+		@include flex(column, space, start);
+		padding: 1.25rem;
+	}
+
+	.articles__title {
+		color: color('mortar');
+		font-size: 0.875rem;
+		font-weight: 700;
+		line-height: 1.5rem;
+		margin-bottom: 0.625rem;
+		width: 100%;
+	}
+
+	.articles__more {
+		color: color('rodeo-dust');
+		@include flex(row, start);
+		font-size: 0.875rem;
+		font-weight: 500;
+		line-height: 1.125rem;
+	}
+
+	.articles__icon {
+		height: 0.9375rem;
+		margin-left: 0.625rem;
+		width: 0.9375rem;
+	}
+
+	.articles__path {
+		fill: none;
+		stroke: color('rodeo-dust');
+		stroke-linecap: round;
+		stroke-width: 1;
+	}
+}
+
+@include breakpoint('tablet') {
+	.articles {
+		padding: 2.5rem 0rem;
+
+		.articles__container {
+			padding: 0rem 1.875rem;
+		}
+
+		.articles__group {
+			@include flex(row, center, stretch);
+		}
+
+		.articles__item {
+			width: 33.33333%;
+		}
+
+		.articles__link {
+			@include flex(column, space);
+			height: 100%;
+		}
+
+		.articles__figure {
+			width: 100%;
+		}
+
+		.articles__body {
+			@include flex-grow;
+			padding: 1.25rem 1.25rem 1.5625rem;
+			width: 100%;
+		}
+
+		.articles__title {
+			margin-bottom: 1.25rem;
+		}
+	}
+}
+
+@include breakpoint('laptop') {
+	.articles {
+		padding: 3.125rem 0rem;
+
+		.articles__container {
+			padding: 0rem 2.5rem;
+		}
+
+		.articles__group {
+			margin: -0.9375rem;
+		}
+
+		.articles__item {
+			padding: 0.9375rem;
+		}
+
+		.articles__body {
+			padding: 1.25rem 1.25rem 1.875rem;
+		}
+
+		.articles__title {
+			font-size: 1.125rem;
+			line-height: 1.75rem;
+			margin-bottom: 1.875rem;
+		}
+
+		.articles__more {
+			font-size: 1rem;
+			line-height: 1.1875rem;
+		}
+	}
+}

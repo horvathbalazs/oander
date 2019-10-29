@@ -13,6 +13,7 @@ $prefixes: (
 	'touch-action':         'ms' null,
 	'transform':            'webkit' 'moz' 'ms' 'o' null,
 	'transform-origin':     'webkit' 'moz' 'ms' 'o' null,
+	'transition':           'webkit' 'moz' 'o' null,
 );
 
 @mixin prefix($arguments) {
@@ -117,4 +118,8 @@ $prefixes: (
 
 @mixin transform-origin($value ...) {
 	@include prefix(('property': 'transform-origin', 'value': $value));
+}
+
+@mixin transition($value ...) {
+	@include prefix(('property': 'transition', 'value': $value));
 }

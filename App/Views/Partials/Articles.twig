@@ -1,0 +1,27 @@
+{% if not articles is empty %}
+<section class="articles">
+	<div class="articles__container">
+		<div class="articles__group">
+			{% for article in articles | slice(0, 3) %}
+			<article class="articles__item">
+				<a class="articles__link" href="{{ article.link }}" title="{{ article.title }}">
+					<figure class="articles__figure">
+						<img class="articles__image"
+						     alt="{{ article.title }}"
+						     height="250" src="{{ 'images/%s' | format(article.image) }}"
+						     style="{{ 'background-image:url("images/%s")' | format(article.image) }}"
+						     title="{{ article.title }}"
+						     width="384">
+					</figure>
+
+					<div class="articles__body">
+						<h3 class="articles__title">{{ article.title }}</h3>
+						<span class="articles__more">Read more{% include 'Icons/Arrow.twig' with { 'block': 'articles', 'title': 'Read more' } only %}</span>
+					</div>
+				</a>
+			</article>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+{% endif %}
