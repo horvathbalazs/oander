@@ -6,6 +6,7 @@ $prefixes: (
 	'interpolation-mode':   'ms',
 	'overflow-scrolling':   'webkit',
 	'overflow-style':       'ms',
+	'selection':            'moz' null,
 	'tab-size':             'moz' 'o' null,
 	'tap-highlight-color':  'webkit',
 	'text-decoration-skip': 'webkit' null,
@@ -90,6 +91,12 @@ $prefixes: (
 
 @mixin overflow-style($value ...) {
 	@include prefix(('property': 'overflow-style', 'value': $value));
+}
+
+@mixin selection {
+	@include prefix(('notation': "::", 'selector': 'selection')) {
+		@content;
+	};
 }
 
 @mixin tab-size($value ...) {
