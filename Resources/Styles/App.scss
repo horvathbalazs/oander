@@ -32,7 +32,8 @@ $variables: (
 };
 
 $elements: (
-	'article', 'body', 'div', 'figure', 'h3', 'main', 'section',
+	'article', 'aside', 'body', 'div', 'figure', 'h3', 'main', 'section',
+	'button',
 	'a', 'span',
 	'img', 'g', 'path', 'svg',
 );
@@ -63,4 +64,5 @@ $elements: (
 	'Modules',
 
 	'Partials/Articles',
+	'Partials/Elevator',
 	'Partials/Features';
