@@ -26,7 +26,8 @@ $variables: ();
 @include html;
 
 $elements: (
-	'body', 'div', 'main'
+	'body', 'div', 'h3', 'li', 'main', 'section', 'ul',
+	'path', 'svg',
 );
 
 @include reset($elements);
@@ -37,4 +38,7 @@ $elements: (
 
 @include main;
 
-@import 'Modules';
+@import
+	'Modules',
+
+	'Partials/Features';

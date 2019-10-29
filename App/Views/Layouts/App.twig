@@ -6,6 +6,10 @@
 
 		{% set title = 'Oander – front/>' %}
 		<title>{{ title }}</title>
+
+		<link as="script" href="app.js{{ cache }}" rel="preload">
+
+		<link href="app.css{{ cache }}" rel="stylesheet">
 	</head>
 
 	<body class="body">

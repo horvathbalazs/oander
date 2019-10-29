@@ -1,4 +1,5 @@
 {% extends 'Layouts/App.twig' %}
 
 {% block layout %}
+{% include 'Partials/Features.twig' with { 'features': features } only %}
 {% endblock %}
