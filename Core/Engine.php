@@ -22,6 +22,8 @@ trait Engine
 				var_dump($variable);
 			}
 		}));
+
+		$this->environment->addGlobal('navigation', json_decode(file_get_contents('App/Data/Navigation.json')));
 	}
 
 	final public function render(
