@@ -13,6 +13,11 @@ trait HomeModel
 		return json_decode(file_get_contents('App/Data/Articles.json'));
 	}
 
+	public function getHero(): object
+	{
+		return json_decode(file_get_contents('App/Data/Hero.json'));
+	}
+
 	public function getFeatures(): array
 	{
 		return json_decode(file_get_contents('App/Data/Features.json'));

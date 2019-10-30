@@ -1,0 +1,22 @@
+{% if not hero is empty %}
+<section class="hero">
+	<div class="hero__container">
+		<div class="hero__light"></div>
+		<div class="hero__dark"></div>
+
+		<img class="hero__image"
+		     alt="{{ hero.title | striptags }}"
+		     height="568"
+		     src="{{ 'images/%s' | format(hero.image) }}"
+		     style="{{ 'background-image:url("images/%s")' | format(hero.image) }}"
+		     title="{{ hero.title | striptags }}"
+		     width="494">
+
+		<article class="hero__body">
+			<h1 class="hero__title">{{ hero.title | raw }}</h1>
+			<p class="hero__description">{{ hero.description | raw }}</p>
+			<a class="hero__button" href="" title="Buy now">Buy now</a>
+		</article>
+	</div>
+</section>
+{% endif %}

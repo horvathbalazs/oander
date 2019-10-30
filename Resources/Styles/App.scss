@@ -5,13 +5,16 @@ $breakpoints: ();
 @import 'Breakpoints';
 
 $colors: (
-	'dark-gray':   #ABABAB,
-	'eclipse':     #3A3A3A,
-	'gainsboro':   #DBDBDB,
-	'mortar':      #5A5A5A,
-	'nero':        #292929,
-	'night-rider': #2E2E2E,
-	'rodeo-dust':  #C4A37B,
+	'dark-gray':     #ABABAB,
+	'eclipse':       #3A3A3A,
+	'gainsboro':     #DBDBDB,
+	'melanzane':     #242123,
+	'mortar':        #5A5A5A,
+	'nero':          #292929,
+	'night-rider':   #2E2E2E,
+	'rodeo-dust':    #C4A37B,
+	'smoke':         #F7F7F7,
+	'white-smoke':   #EBEBEB,
 );
 
 @import 'Colors';
@@ -33,10 +36,10 @@ $variables: (
 };
 
 $elements: (
-	'article', 'aside', 'body', 'div', 'figure', 'footer', 'h3', 'li', 'main', 'nav', 'section', 'ul',
+	'article', 'aside', 'body', 'div', 'figure', 'footer', 'h1', 'h3', 'li', 'main', 'nav', 'p', 'section', 'ul',
 	'button', 'form', 'input', 'label',
-	'a', 'span',
-	'img', 'g', 'path', 'svg',
+	'a', 'em', 'span', strong,
+	'g', 'img', 'path', 'svg',
 );
 
 @include reset($elements);
@@ -66,6 +69,7 @@ $elements: (
 
 	'Partials/Articles',
 	'Partials/Elevator',
-	'Partials/Footer',
 	'Partials/Features',
+	'Partials/Footer',
+	'Partials/Hero',
 	'Partials/Newsletter';
