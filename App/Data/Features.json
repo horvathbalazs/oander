@@ -1,21 +1,21 @@
 [
 	{
-		"id":   0,
+		"id":   1,
 		"icon": "leather",
 		"name": "Leather strap"
 	},
 	{
-		"id":   1,
+		"id":   2,
 		"icon": "water",
 		"name": "Water resistant"
 	},
 	{
-		"id":   2,
+		"id":   3,
 		"icon": "gear",
 		"name": "Spring drive"
 	},
 	{
-		"id":   3,
+		"id":   4,
 		"icon": "warranty",
 		"name": "Warranty"
 	}

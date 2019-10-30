@@ -1,71 +1,87 @@
 {
 	"about": [
 		{
-			"link": "https://example.com/introduction",
+			"id":    1,
+			"link":  "https://example.com/introduction",
 			"title": "Introduction"
 		},
 		{
-			"link": "https://example.com/lorem-ipsum",
+			"id":    2,
+			"link":  "https://example.com/lorem-ipsum",
 			"title": "Lorem ipsum"
 		},
 		{
-			"link": "https://example.com/brands-sold",
+			"id":    3,
+			"link":  "https://example.com/brands-sold",
 			"title": "Brands sold"
 		},
 		{
-			"link": "https://example.com/conditions-of-use",
+			"id":    4,
+			"link":  "https://example.com/conditions-of-use",
 			"title": "Conditions of use"
 		},
 		{
-			"link": "https://example.com/impressum",
+			"id":    5,
+			"link":  "https://example.com/impressum",
 			"title": "Impressum"
 		},
 		{
-			"link": "https://example.com/contact",
+			"id":    6,
+			"link":  "https://example.com/contact",
 			"title": "Contact"
 		}
 	],
 	"information": [
 		{
-			"link": "https://example.com/help-to-purchasing",
+			"id":    1,
+			"link":  "https://example.com/help-to-purchasing",
 			"title": "Help to purchasing"
 		},
 		{
-			"link": "https://example.com/purchasing-information",
+			"id":    2,
+			"link":  "https://example.com/purchasing-information",
 			"title": "Purchasing information"
 		},
 		{
-			"link": "https://example.com/pay-and-delivery",
+			"id":    3,
+			"link":  "https://example.com/pay-and-delivery",
 			"title": "Pay and delivery"
 		},
 		{
-			"link": "https://example.com/faq",
+			"id":    4,
+			"link":  "https://example.com/faq",
 			"title": "FAQ"
 		},
 		{
-			"link": "https://example.com/data-protection",
+			"id":    5,
+			"link":  "https://example.com/data-protection",
 			"title": "Data protection"
 		},
 		{
-			"link": "https://example.com/conditions",
+			"id":    6,
+			"link":  "https://example.com/conditions",
 			"title": "Conditions"
 		}
 	],
 	"social": [
 		{
-			"link": "https://example.com/newsletter",
+			"id":    1,
+			"link":  "https://example.com/newsletter",
 			"title": "Newsletter"
 		},
 		{
-			"link": "https://example.com/facebook",
+			"id":    2,
+			"link":  "https://example.com/facebook",
 			"title": "Facebook"
 		},
 		{
-			"link": "https://example.com/google-plus",
+			"id":    3,
+			"link":  "https://example.com/google-plus",
 			"title": "Google Plus"
 		},
 		{
-			"link": "https://example.com/twitter",
+			"id":    4,
+			"link":  "https://example.com/twitter",
 			"title": "Twitter"
 		}
 	]

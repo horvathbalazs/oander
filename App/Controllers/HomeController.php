@@ -17,6 +17,7 @@ final class HomeController
 		echo(App::instance()->render('Home/Index', [
 			'articles' => $this->getArticles(),
 			'features' => $this->getFeatures(),
+			'hero'     => $this->getHero(),
 		]));
 	}
 }

@@ -20,12 +20,21 @@
 	.articles__link {
 		@include box-shadow(inset 0rem 0rem 0rem 0.0625rem rgba(color('nero'), 0.1));
 		display: block;
+
+		&:hover .articles__image {
+			@include transform(scale(1.075) translate(0rem, 0rem));
+		}
 	}
 
-	.articles__figure:before {
-		content: ' ';
-		display: block;
-		padding-bottom: 60%;
+	.articles__figure {
+		overflow: hidden;
+			@include transform(translate(0rem, 0rem));
+
+		&:before {
+			content: ' ';
+			display: block;
+			padding-bottom: 60%;
+		}
 	}
 
 	.articles__image {
@@ -35,6 +44,8 @@
 		position: absolute;
 		right: 0rem;
 		top: 0rem;
+		@include transform(scale(1) translate(0rem, 0rem));
+		@include transition(transform variable('transition'));
 	}
 
 	.articles__body {
