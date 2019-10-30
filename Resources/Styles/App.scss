@@ -17,6 +17,7 @@ $colors: (
 @import 'Colors';
 
 $variables: (
+	'elevator':   1s,
 	'transition': 0.25s,
 );
 
@@ -32,8 +33,8 @@ $variables: (
 };
 
 $elements: (
-	'article', 'aside', 'body', 'div', 'figure', 'h3', 'main', 'section',
-	'button',
+	'article', 'aside', 'body', 'div', 'figure', 'footer', 'h3', 'li', 'main', 'nav', 'section', 'ul',
+	'button', 'form', 'input', 'label',
 	'a', 'span',
 	'img', 'g', 'path', 'svg',
 );
@@ -41,7 +42,7 @@ $elements: (
 @include reset($elements);
 
 @include selection {
-	background-color: rgba(color('rodeo-dust'), 0.99);
+	background-color: rgba(color('rodeo-dust'), 0.5);
 	color: color('nero');
 	text-shadow: none;
 };
@@ -65,4 +66,6 @@ $elements: (
 
 	'Partials/Articles',
 	'Partials/Elevator',
-	'Partials/Features';
+	'Partials/Footer',
+	'Partials/Features',
+	'Partials/Newsletter';
