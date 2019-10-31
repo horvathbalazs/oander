@@ -15,6 +15,20 @@
 
 	<body class="body">
 		<div class="app">
+			<header class="header">
+				<div class="header__container">
+					<h2 class="logo">
+						<a class="logo__link" href="https://example.com/" title="{{ title }}">
+							{% include 'Icons/Logo.twig' with { 'block': 'logo', 'title': title } only %}
+						</a>
+					</h2>
+
+					<div class="header__space"></div>
+
+					<div data-navigation></div>
+				</div>
+			</header>
+
 			<main class="main">
 				{% block layout %}
 				{% endblock %}
@@ -55,6 +69,7 @@
 			</aside>
 		</div>
 
+		<script>const navigation = {{ navigation.header | json_encode | raw }}</script>
 		<script src="app.js{{ cache }}"></script>
 	</body>
 </html>

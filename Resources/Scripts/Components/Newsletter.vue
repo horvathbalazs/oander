@@ -1,5 +1,5 @@
 <template>
-	<form @submit="validation" class="newsletter" action="https://example.com/api" method="get" novalidate>
+	<form @submit="onValidation" class="newsletter" action="https://example.com/api" method="get" novalidate>
 		<h3 class="newsletter__title">Subscribe to the newsletter</h3>
 
 		<div class="newsletter__fields">
@@ -41,7 +41,7 @@
 			}
 		},
 		methods: {
-			validation(event) {
+			onValidation(event) {
 				this.errors = []
 
 				if (! this.firstname) {

@@ -17,6 +17,7 @@ $prefixes: (
 	'transform':            'webkit' 'moz' 'ms' 'o' null,
 	'transform-origin':     'webkit' 'moz' 'ms' 'o' null,
 	'transition':           'webkit' 'moz' 'o' null,
+	'user-select':          'webkit' 'moz' 'ms' null,
 );
 
 @mixin prefix($arguments) {
@@ -131,4 +132,8 @@ $prefixes: (
 
 @mixin transition($value ...) {
 	@include prefix(('property': 'transition', 'value': $value));
+}
+
+@mixin user-select($value ...) {
+	@include prefix(('property': 'user-select', 'value': $value));
 }
