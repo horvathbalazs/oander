@@ -1,0 +1,102 @@
+.footer {
+	border-top: 0.0625rem solid rgba(color('night-rider'), 0.15);
+	padding: 1.875rem 0rem;
+	width: 100%;
+
+	.footer__container {
+		margin: 0rem auto;
+		max-width: 85.625rem;
+		padding: 0rem 1.25rem;
+		width: 100%;
+	}
+
+	.footer__group {
+		margin: -0.625rem;
+	}
+
+	.footer__navigation {
+		padding: 0.625rem;
+	}
+
+	.footer__title {
+		color: color('eclipse');
+		font-size: 0.875rem;
+		font-weight: 700;
+		line-height: 1.125rem;
+		margin-bottom: 0.625rem;
+		text-align: center;
+	}
+
+	.footer__link {
+		color: color('dark-gray');
+		display: block;
+		font-size: 0.875rem;
+		line-height: 1.125rem;
+		margin: 0rem auto;
+		padding: 0.375rem 0.9375rem;
+		text-align: center;
+	}
+
+	.footer__space {
+		display: none;
+		@include flex-grow;
+	}
+}
+
+@include breakpoint('tablet') {
+	.footer {
+		padding: 2.1875rem 0rem 1.875rem;
+
+		.footer__container {
+			padding: 0rem 1.875rem;
+		}
+
+		.footer__group {
+			@include flex(row, start, start, wrap);
+		}
+
+		.footer__navigation {
+			width: 33.33333%;
+		}
+	}
+}
+
+@include breakpoint('laptop') {
+	.footer {
+		padding: 2.5rem 0rem 1.875rem;
+
+		.footer__container {
+			padding: 0rem 2.5rem;
+		}
+
+		.footer__group {
+			margin: -0.9375rem;
+		}
+
+		.footer__navigation {
+			padding: 0.9375rem;
+			width: 20%;
+		}
+
+		.footer__list {
+			margin: 0rem -0.9375rem;
+		}
+
+		.footer__title,
+		.footer__link {
+			text-align: left;
+		}
+	}
+}
+
+@include breakpoint('desktop') {
+	.footer {
+		.footer__navigation {
+			width: 16.66667%;
+		}
+
+		.footer__space {
+			display: block;
+		}
+	}
+}

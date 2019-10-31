@@ -1,0 +1,139 @@
+$prefixes: map-merge($prefixes, (
+	'align-items':     'webkit' null,
+	'box-align':       'webkit' 'moz',
+	'box-direction':   'webkit' 'moz',
+	'box-flex':        'webkit' 'moz',
+	'box-lines':       'webkit',
+	'box-orient':      'webkit' 'moz',
+	'box-pack':        'webkit' 'moz',
+	'flex-align':      'ms',
+	'flex-direction':  'webkit' 'ms' null,
+	'flex-grow':       'webkit' null,
+	'flex-pack':       'ms',
+	'flex-positive':   'ms',
+	'flex-wrap':       'webkit' 'ms' null,
+	'justify-content': 'webkit' null,
+));
+
+@mixin align-items($value: center) {
+	@if $value == start {
+		@include prefixes(
+			('property': 'box-align',   'value': start)
+			('property': 'flex-align',  'value': start)
+			('property': 'align-items', 'value': flex-start)
+		);
+	} @else if $value == end {
+		@include prefixes(
+			('property': 'box-align',   'value': end)
+			('property': 'flex-align',  'value': end)
+			('property': 'align-items', 'value': flex-end)
+		);
+	} @else if $value == center {
+		@include prefixes(
+			('property': 'box-align',   'value': center)
+			('property': 'flex-align',  'value': center)
+			('property': 'align-items', 'value': center)
+		);
+	} @else if $value == stretch {
+		@include prefixes(
+			('property': 'box-align',   'value': stretch)
+			('property': 'flex-align',  'value': stretch)
+			('property': 'align-items', 'value': stretch)
+		);
+	}
+}
+
+@mixin flex-direction($value: row) {
+	@if $value == row {
+		@include prefixes(
+			('property': 'box-orient',     'value': horizontal)
+			('property': 'box-direction',  'value': normal)
+			('property': 'flex-direction', 'value': row)
+		);
+	} @else if $value == row-reverse {
+		@include prefixes(
+			('property': 'box-orient',     'value': horizontal)
+			('property': 'box-direction',  'value': reverse)
+			('property': 'flex-direction', 'value': row-reverse)
+		);
+	} @else if $value == column {
+		@include prefixes(
+			('property': 'box-orient',     'value': vertical)
+			('property': 'box-direction',  'value': normal)
+			('property': 'flex-direction', 'value': column)
+		);
+	} @else if $value == column-reverse {
+		@include prefixes(
+			('property': 'box-orient',     'value': vertical)
+			('property': 'box-direction',  'value': reverse)
+			('property': 'flex-direction', 'value': column-reverse)
+		);
+	}
+}
+
+@mixin justify-content($value: center) {
+	@if $value == start {
+		@include prefixes(
+			('property': 'box-pack',        'value': start)
+			('property': 'flex-pack',       'value': start)
+			('property': 'justify-content', 'value': flex-start)
+		);
+	} @else if $value == end {
+		@include prefixes(
+			('property': 'box-pack',        'value': end)
+			('property': 'flex-pack',       'value': end)
+			('property': 'justify-content', 'value': flex-end)
+		);
+	} @else if $value == center {
+		@include prefixes(
+			('property': 'box-pack',        'value': center)
+			('property': 'flex-pack',       'value': center)
+			('property': 'justify-content', 'value': center)
+		);
+	} @else if $value == space {
+		@include prefixes(
+			('property': 'box-pack',        'value': justify)
+			('property': 'flex-pack',       'value': justify)
+			('property': 'justify-content', 'value': space-between)
+		);
+	}
+}
+
+@mixin flex-grow($value: 1) {
+	@include prefixes(
+		('property': 'box-flex',      'value': $value)
+		('property': 'flex-positive', 'value': $value)
+		('property': 'flex-grow',     'value': $value)
+	);
+}
+
+@mixin flex-wrap($value: nowrap) {
+	@if $value == nowrap {
+		@include prefixes(
+			('property': 'box-lines', 'value': single)
+			('property': 'flex-wrap', 'value': nowrap)
+		);
+	} @else if $value == wrap {
+		@include prefixes(
+			('property': 'box-lines', 'value': multiple)
+			('property': 'flex-wrap', 'value': wrap)
+		);
+	}
+}
+
+@mixin flex(
+	$flex-direction: row,
+	$justify-content: center,
+	$align-items: center,
+	$flex-wrap: nowrap
+) {
+	@include prefixes(
+		('contains': true, 'prefixes': 'webkit' 'moz', 'property': 'display', 'value': box)
+		('contains': true, 'prefixes': 'ms',           'property': 'display', 'value': flexbox)
+		('contains': true, 'prefixes': 'webkit' null,  'property': 'display', 'value': flex)
+	);
+	@include flex-direction($flex-direction);
+	@include justify-content($justify-content);
+	@include align-items($align-items);
+	@include flex-wrap($flex-wrap);
+}

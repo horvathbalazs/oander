@@ -1,0 +1,82 @@
+@import 'Fonts';
+
+$breakpoints: ();
+
+@import 'Breakpoints';
+
+$colors: (
+	'dark-gray':     #ABABAB,
+	'eclipse':       #3A3A3A,
+	'gainsboro':     #DBDBDB,
+	'melanzane':     #242123,
+	'mortar':        #5A5A5A,
+	'nero':          #292929,
+	'night-rider':   #2E2E2E,
+	'rodeo-dust':    #C4A37B,
+	'smoke':         #F7F7F7,
+	'white-smoke':   #EBEBEB,
+);
+
+@import 'Colors';
+
+$variables: (
+	'elevator':   1s,
+	'navigation': 0.25s,
+	'sandwich':   0.25s,
+	'transition': 0.25s,
+);
+
+@import
+	'Variables',
+	'Functions',
+	'Prefixes',
+	'Flex',
+	'Reset';
+
+@include html {
+	@include montserrat;
+};
+
+$elements: (
+	'article', 'aside', 'body', 'div', 'figure', 'footer', 'h2', 'h3', 'h4', 'header', 'li', 'main', 'nav', 'p', 'section', 'ul',
+	'button', 'form', 'input', 'label',
+	'a', 'em', 'span', strong,
+	'g', 'img', 'path', 'svg',
+);
+
+@include reset($elements);
+
+@include selection {
+	background-color: rgba(color('rodeo-dust'), 0.5);
+	color: color('nero');
+	text-shadow: none;
+};
+
+@include prefix(('notation': 'img::', 'selector': 'selection')) {
+	background-color: rgba(color('rodeo-dust'), 0.5);
+};
+
+@include prefix(('notation': 'svg::', 'selector': 'selection')) {
+	background-color: rgba(color('rodeo-dust'), 0.5);
+};
+
+@include body;
+
+@include app;
+
+@include main;
+
+@import
+	'Modules',
+
+	'Partials/Articles',
+	'Partials/Desktop',
+	'Partials/Elevator',
+	'Partials/Features',
+	'Partials/Footer',
+	'Partials/Header',
+	'Partials/Hero',
+	'Partials/Logo',
+	'Partials/Newsletter',
+	'Partials/Phone',
+	'Partials/Sandwich';

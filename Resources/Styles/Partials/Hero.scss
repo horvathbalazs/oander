@@ -1,0 +1,218 @@
+.hero {
+	overflow: hidden;
+	width: 100%;
+
+	.hero__light,
+	.hero__dark {
+		bottom: 0rem;
+		position: absolute;
+		top: 0rem;
+	}
+
+	.hero__light {
+		background-color: red;
+		@include prefix(('contains': true, 'prefixes': map-get($prefixes, 'linear-gradient'), 'property': 'background-image', 'value': linear-gradient(left, color('white-smoke'), color('smoke'))));
+		right: 15.625%;
+		width: 84.375%;
+	}
+
+	.hero__dark {
+		background-color: blue;
+		background-color: color('melanzane');
+		left: 84.375%;
+		width: 15.625%;
+	}
+
+	.hero__image {
+		@include prefix(('contains': true, 'prefixes': map-get($prefixes, 'calc'), 'property': 'height', 'value': calc((100% - 3.75rem) * 0.75)));
+		left: 84.375%;
+		max-height: 100%;
+		max-width: none;
+		position: absolute;
+		@include prefix(('contains': true, 'prefixes': map-get($prefixes, 'calc'), 'property': 'top', 'value': calc((100% + 3.75rem) * 0.5)));
+		@include transform(translate(-50%, -50%));
+		width: auto;
+	}
+
+	.hero__container {
+		margin: 0rem auto;
+		max-width: 85.625rem;
+		padding: 7.5rem 0rem 3.75rem 1.25rem;
+		@include prefix(('contains': true, 'prefixes': map-get($prefixes, 'calc'), 'property': 'padding-right', 'value': calc(15.625% + 3.125rem)));
+		width: 100%;
+	}
+
+	.hero__body {
+		@include flex(column, center, start);
+		height: 100%;
+	}
+
+	.hero__title {
+		color: color('eclipse');
+		font-size: 1.75rem;
+		font-weight: 700;
+		line-height: 2.375rem;
+		margin-bottom: 1.875rem;
+
+		em {
+			color: color('rodeo-dust');
+			font-style: normal;
+			white-space: nowrap;
+		}
+	}
+
+	.hero__description {
+		color: color('mortar');
+		display: none;
+		font-size: 1rem;
+		line-height: 1.75rem;
+		margin-bottom: 1.875rem;
+		max-width: 27.5rem;
+		width: 100%;
+	}
+
+	.hero__button {
+		background-color: color('black');
+		color: color('white');
+		display: block;
+		font-size: 1.125rem;
+		font-weight: 600;
+		line-height: 1.375rem;
+		height: 3.4375rem;
+		padding: 1.03125rem 2.1875rem;
+		text-align: center;
+		@include transition(background-color variable('transition'));
+
+		&:hover {
+			background-color: color('rodeo-dust');
+		}
+	}
+}
+
+@include breakpoint('tablet') {
+	.hero {
+		.hero__light {
+			right: 20%;
+			width: 80%;
+		}
+
+		.hero__dark {
+			background-color: blue;
+			background-color: color('melanzane');
+			left: 80%;
+			width: 20%;
+		}
+
+		.hero__image {
+			left: 80%;
+		}
+
+		.hero__container {
+			padding: 9.375rem 0rem 5.625rem 1.875rem;
+			@include prefix(('contains': true, 'prefixes': map-get($prefixes, 'calc'), 'property': 'padding-right', 'value': calc(20% + 6.875rem)));
+		}
+
+		.hero__description {
+			display: block;
+		}
+	}
+}
+
+@include breakpoint('laptop') {
+	.hero {
+		.hero__light {
+			right: 40.87591%;
+			width: 59.12409%;
+
+			&:after {
+				background-image: url('images/light.png');
+				background-position: 100% 50%;
+				background-size: auto 100%;
+				bottom: 0rem;
+				content: ' ';
+				display: block;
+				left: 0rem;
+				position: absolute;
+				right: 0rem;
+				top: 0rem;
+			}
+		}
+
+		.hero__dark {
+			left: 59.12409%;
+			width: 40.87591%;
+
+			&:after {
+				background-color: rgba(color('white'), 0.1);
+				content: ' ';
+				display: block;
+				height: 31.25rem;
+				left: 0rem;
+				position: absolute;
+				@include prefix(('contains': true, 'prefixes': map-get($prefixes, 'calc'), 'property': 'top', 'value': calc((100% + 5rem) * 0.5)));
+				@include transform(translateY(-50%));
+				width: 12.5rem;
+			}
+
+			&:before {
+				bottom: 0rem;
+				color: color('eclipse');
+				content: 'Christopher\AWard';
+				@include flex(row, start, center);
+				font-size: 13.75rem;
+				font-weight: 900;
+				left: 4.0625rem;
+				line-height: 11.25rem;
+				opacity: 0.2;
+				overflow: hidden;
+				padding-top: 5rem;
+				position: absolute;
+				right: 0rem;
+				text-transform: uppercase;
+				top: 0rem;
+			}
+		}
+
+		.hero__image {
+			@include prefix(('contains': true, 'prefixes': map-get($prefixes, 'calc'), 'property': 'height', 'value': calc((100% - 5rem) * 0.95)));
+			left: 59.12409%;
+			@include prefix(('contains': true, 'prefixes': map-get($prefixes, 'calc'), 'property': 'top', 'value': calc((100% + 5rem) * 0.5)));
+		}
+
+		.hero__container {
+			padding: 12.5rem 0rem 7.5rem 2.5rem;
+			@include prefix(('contains': true, 'prefixes': map-get($prefixes, 'calc'), 'property': 'padding-right', 'value': calc(40.87591% + 9.375rem)));
+		}
+
+		.hero__title {
+			font-size: 3.125rem;
+			line-height: 3.875rem;
+		}
+
+		.hero__description {
+			margin-bottom: 2.5rem;
+		}
+	}
+}
+
+@media (min-width: 85.625em) {
+	.hero {
+		.hero__light {
+			@include prefix(('contains': true, 'prefixes': map-get($prefixes, 'calc'), 'property': 'width', 'value': calc((100vw - 85.625rem) / 2 + 59.12409%)));
+			right: 40.87591%;
+		}
+
+		.hero__dark {
+			@include prefix(('contains': true, 'prefixes': map-get($prefixes, 'calc'), 'property': 'width', 'value': calc((100vw - 85.625rem) / 2 + 40.87591%)));
+			left: 59.12409%;
+		}
+
+		.hero__image {
+			left: 59.12409%;
+		}
+
+		.hero__container {
+			padding-right: 44.375rem;
+		}
+	}
+}

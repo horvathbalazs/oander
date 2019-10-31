@@ -1,0 +1,7 @@
+{% extends 'Layouts/App.twig' %}
+
+{% block layout %}
+{% include 'Partials/Hero.twig' with { 'hero': hero } only %}
+{% include 'Partials/Features.twig' with { 'features': features } only %}
+{% include 'Partials/Articles.twig' with { 'articles': articles } only %}
+{% endblock %}

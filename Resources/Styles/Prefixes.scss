@@ -1,0 +1,139 @@
+$prefixes: (
+	'appearance':           'webkit' 'moz' null,
+	'border-radius':        'webkit' 'moz' null,
+	'box-shadow':           'webkit' 'moz' null,
+	'box-sizing':           'webkit' 'moz' null,
+	'calc':                 'webkit' 'moz' null,
+	'interpolation-mode':   'ms',
+	'linear-gradient':      'webkit' 'moz' 'o' null,
+	'overflow-scrolling':   'webkit',
+	'overflow-style':       'ms',
+	'selection':            'moz' null,
+	'tab-size':             'moz' 'o' null,
+	'tap-highlight-color':  'webkit',
+	'text-decoration-skip': 'webkit' null,
+	'text-size-adjust':     'webkit' 'moz' 'ms' null,
+	'touch-action':         'ms' null,
+	'transform':            'webkit' 'moz' 'ms' 'o' null,
+	'transform-origin':     'webkit' 'moz' 'ms' 'o' null,
+	'transition':           'webkit' 'moz' 'o' null,
+	'user-select':          'webkit' 'moz' 'ms' null,
+);
+
+@mixin prefix($arguments) {
+	@if not map-has-key($arguments, 'prefixes') {
+		$arguments: map-merge($arguments, ('prefixes': map-get($prefixes, if(map-has-key($arguments, 'property'), map-get($arguments, 'property'), map-get($arguments, 'selector')))));
+	}
+
+	@if map-has-key($arguments, 'property') and map-has-key($arguments, 'value') {
+		$property: map-get($arguments, 'property');
+		$value: map-get($arguments, 'value');
+
+		@each $prefix in map-get($arguments, 'prefixes') {
+			@if $prefix {
+				@if map-has-key($arguments, 'contains') and map-get($arguments, 'contains') {
+					#{ $property }: #{ implode('-' $prefix '-' $value) };
+				} @else {
+					#{ implode('-' $prefix '-' $property) }: $value;
+				}
+			} @else {
+				#{ $property }: $value;
+			}
+		}
+	} @else if map-has-key($arguments, 'selector') {
+		@if not map-has-key($arguments, 'notation') {
+			$arguments: map-merge($arguments, ('notation': ''));
+		}
+
+		$notation: map-get($arguments, 'notation');
+		$selector: map-get($arguments, 'selector');
+
+		@each $prefix in map-get($arguments, 'prefixes') {
+			@if $prefix {
+				#{ implode($notation '-' $prefix '-' $selector) } {
+					@content;
+				}
+			} @else {
+				#{ implode($notation $selector) } {
+					@content;
+				}
+			}
+		}
+	}
+}
+
+@mixin prefixes($prefixes) {
+	@each $arguments in $prefixes {
+		@include prefix($arguments);
+	}
+}
+
+@mixin appearance($value ...) {
+	@include prefix(('property': 'appearance', 'value': $value));
+}
+
+@mixin border-radius($value ...) {
+	@include prefix(('property': 'border-radius', 'value': $value));
+}
+
+@mixin box-shadow($value ...) {
+	@include prefix(('property': 'box-shadow', 'value': $value));
+}
+
+@mixin box-sizing($value ...) {
+	@include prefix(('property': 'box-sizing', 'value': $value));
+}
+
+@mixin interpolation-mode($value ...) {
+	@include prefix(('property': 'interpolation-mode', 'value': $value));
+}
+
+@mixin overflow-scrolling($value ...) {
+	@include prefix(('property': 'overflow-scrolling', 'value': $value));
+}
+
+@mixin overflow-style($value ...) {
+	@include prefix(('property': 'overflow-style', 'value': $value));
+}
+
+@mixin selection {
+	@include prefix(('notation': "::", 'selector': 'selection')) {
+		@content;
+	};
+}
+
+@mixin tab-size($value ...) {
+	@include prefix(('property': 'tab-size', 'value': $value));
+}
+
+@mixin tap-highlight-color($value ...) {
+	@include prefix(('property': 'tap-highlight-color', 'value': $value));
+}
+
+@mixin text-decoration-skip($value ...) {
+	@include prefix(('property': 'text-decoration-skip', 'value': $value));
+}
+
+@mixin text-size-adjust($value ...) {
+	@include prefix(('property': 'text-size-adjust', 'value': $value));
+}
+
+@mixin touch-action($value ...) {
+	@include prefix(('property': 'touch-action', 'value': $value));
+}
+
+@mixin transform($value ...) {
+	@include prefix(('property': 'transform', 'value': $value));
+}
+
+@mixin transform-origin($value ...) {
+	@include prefix(('property': 'transform-origin', 'value': $value));
+}
+
+@mixin transition($value ...) {
+	@include prefix(('property': 'transition', 'value': $value));
+}
+
+@mixin user-select($value ...) {
+	@include prefix(('property': 'user-select', 'value': $value));
+}

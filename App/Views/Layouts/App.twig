@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta content="initial-scale=1,width=device-width" name="viewport">
+
+		{% set title = 'Oander – front/>' %}
+		<title>{{ title }}</title>
+
+		<link as="script" href="app.js{{ cache }}" rel="preload">
+		<link as="style" href="app.css{{ cache }}" rel="preload">
+
+		<link href="app.css{{ cache }}" rel="stylesheet">
+	</head>
+
+	<body class="body">
+		<div class="app">
+			<header class="header">
+				<div class="header__container">
+					<h2 class="logo">
+						<a class="logo__link" href="https://example.com/" title="{{ title }}">
+							{% include 'Icons/Logo.twig' with { 'block': 'logo', 'title': title } only %}
+						</a>
+					</h2>
+
+					<div class="header__space"></div>
+
+					<div data-navigation></div>
+				</div>
+			</header>
+
+			<main class="main">
+				{% block layout %}
+				{% endblock %}
+			</main>
+
+			<footer class="footer">
+				<div class="footer__container">
+					<div class="footer__group">
+						{% for category in [ 'about', 'information', 'social' ] %}
+						<nav class="footer__navigation">
+							<h3 class="footer__title">
+								{{ category == 'about' ? 'About' }}
+								{{ category == 'information' ? 'Information' }}
+								{{ category == 'social' ? 'Follow me!' }}
+							</h3>
+
+							<ul class="footer__list">
+								{% for item in attribute(navigation, category) %}
+								<li class="footer__item">
+									<a class="footer__link" href="{{ item.link }}"{% if category == 'social' %} target="blank"{% endif %} title="{{ item.title }}">{{ item.title }}</a>
+								</li>
+								{% endfor %}
+							</ul>
+						</nav>
+						{% endfor %}
+
+						<div class="footer__space"></div>
+
+						<div data-newsletter></div>
+					</div>
+				</div>
+			</footer>
+
+			<aside class="elevator">
+				<button class="elevator__button" title="Back to top" type="button" data-elevator>
+					{% include 'Icons/Angle.twig' with { 'block': 'elevator', 'title': 'Back to top' } only %}
+				</button>
+			</aside>
+		</div>
+
+		<script>const navigation = {{ navigation.header | json_encode | raw }}</script>
+		<script src="app.js{{ cache }}"></script>
+	</body>
+</html>

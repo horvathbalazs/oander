@@ -1,0 +1,35 @@
+.header {
+	left: 0rem;
+	position: fixed;
+	right: 0rem;
+	top: 0rem;
+	width: 100%;
+	z-index: 1;
+
+	.header__container {
+		background-color: color('white');
+		@include flex(row, space);
+		height: 3.75rem;
+		margin: 0rem auto;
+		max-width: 85.625rem;
+		padding: 0rem 1.25rem;
+		width: 100%;
+	}
+
+	.header__space {
+		@include flex-grow;
+	}
+}
+
+@include breakpoint('tablet') {
+	.header .header__container {
+		padding: 0rem 1.875rem;
+	}
+}
+
+@include breakpoint('laptop') {
+	.header .header__container {
+		height: 5rem;
+		padding: 0rem 2.5rem;
+	}
+}

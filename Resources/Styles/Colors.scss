@@ -1,0 +1,18 @@
+$colors: map-merge((
+	'black':       #000,
+	'default':     null,
+	'transparent': transparent,
+	'white':       #FFF,
+), $colors);
+
+@function color($name) {
+	@if map-has-key($colors, $name) {
+		@return map-get($colors, $name);
+	}
+
+	@return map-get($colors, 'default');
+}
+
+meta.colors {
+	font-family: '#{ $colors }';
+}
