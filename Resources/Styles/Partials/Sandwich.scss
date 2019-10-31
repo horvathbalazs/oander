@@ -1,0 +1,20 @@
+.sandwich {
+	height: 3.75rem;
+	margin-right: -0.9375rem;
+	min-width: 3.75rem;
+	width: 3.75rem;
+
+	.sandwich__path {
+		stroke: color('eclipse');
+		stroke-linecap: round;
+		stroke-width: 4;
+
+		&:not(.sandwich__path--main) {
+			visibility: hidden;
+		}
+	}
+}
+
+@include breakpoint('tablet') {
+	margin-right: -1.5625rem;
+}

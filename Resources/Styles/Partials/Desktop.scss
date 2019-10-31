@@ -1,0 +1,117 @@
+.desktop {
+	.desktop__list {
+		&.desktop__list--first {
+			@include flex(row, end, stretch);
+		}
+
+		&.desktop__list--second {
+			background-color: color('smoke');
+			@include flex(row, start, start);
+			left: 50%;
+			opacity: 0;
+			max-width: 85.625rem;
+			padding: 1.875rem 2.5rem 5.625rem;
+			pointer-events: none;
+			position: fixed;
+			top: 5rem;
+			@include touch-action(none);
+			@include transform(translateX(-50%));
+			@include transition(opacity variable('navigation'));
+			@include user-select(none);
+			width: 100%;
+
+			&.desktop__list--active {
+				opacity: 1;
+				pointer-events: auto;
+				@include touch-action(auto);
+				@include user-select(auto);
+			}
+		}
+
+		&.desktop__list--third {
+			margin-bottom: 1.875rem;
+		}
+	}
+
+	.desktop__item {
+		&.desktop__item--second {
+			width: 25%;
+
+			&:not(:last-child) {
+				margin-right: 1.875rem;
+			}
+		}
+
+		&.desktop__item--third:not(:last-child) {
+			margin-bottom: 0.3125rem;
+		}
+	}
+
+	.desktop__button.desktop__button--first,
+	.desktop__link.desktop__link--first {
+		color: color('night-rider');
+		display: block;
+		font-size: 1.125rem;
+		font-weight: 700;
+		height: 5rem;
+		line-height: 1.375rem;
+		padding: 1.8125rem 1.25rem;
+		text-align: center;
+		@include transition(color variable('transition'));
+
+		&:hover {
+			color: color('rodeo-dust');
+		}
+	}
+
+	.desktop__button.desktop__button--first {
+		&:after {
+			background-color: color('rodeo-dust');
+			bottom: 1.25rem;
+			content: '';
+			display: block;
+			height: 0.1875rem;
+			left: 1.25rem;
+			opacity: 0;
+			position: absolute;
+			right: 1.25rem;
+			@include transition(opacity variable('navigation'));
+		}
+
+		&.desktop__button--active:after {
+			opacity: 1;
+		}
+	}
+
+	.desktop__link {
+		&.desktop__link--second,
+		&.desktop__link--third {
+			display: block;
+			font-size: 1rem;
+			line-height: 1.1875rem;
+		}
+
+		&.desktop__link--second {
+			color: color('rodeo-dust');
+			font-weight: 700;
+			line-height: 1.1875rem;
+		}
+
+		&.desktop__link--third {
+			color: color('mortar');
+			@include transition(color variable('transition'));
+
+			&:hover {
+				color: color('rodeo-dust');
+			}
+		}
+	}
+
+	.desktop__title.desktop__title--second {
+		color: color('mortar');
+		font-size: 1rem;
+		font-weight: 700;
+		line-height: 1.1875rem;
+		margin-bottom: 1.875rem;
+	}
+}

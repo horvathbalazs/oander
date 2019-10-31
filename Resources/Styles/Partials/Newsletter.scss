@@ -47,7 +47,12 @@
 		line-height: 1.1875rem;
 		padding: 0.65625rem 0.9375rem;
 		text-align: center;
+		@include transition(background-color variable('transition'));
 		width: 100%;
+
+		&:hover {
+			background-color: color('rodeo-dust');
+		}
 	}
 }
 

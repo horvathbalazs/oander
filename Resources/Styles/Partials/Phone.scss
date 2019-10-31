@@ -1,0 +1,132 @@
+.phone {
+	background-color: color('smoke');
+	bottom: 0rem;
+	left: 0rem;
+	opacity: 0;
+	padding: 0.9375rem 0rem;
+	pointer-events: none;
+	position: fixed;
+	right: 0rem;
+	top: 3.75rem;
+	@include touch-action(none);
+	@include transition(opacity variable('navigation'));
+	@include user-select(none);
+
+	&.phone--active {
+		opacity: 1;
+		pointer-events: auto;
+		@include touch-action(auto);
+		@include user-select(auto);
+	}
+
+	.phone__scroll {
+		height: 100%;
+		overflow-y: auto;
+	}
+
+	.phone__list.phone__list--second {
+		padding: 0.625rem 0rem 1.25rem;
+	}
+
+	.phone__button.phone__button--first,
+	.phone__link.phone__link--first {
+		background-color: rgba(color('night-rider'), 0);
+		color: color('night-rider');
+		display: block;
+		font-size: 1.25rem;
+		font-weight: 700;
+		height: 3.125rem;
+		line-height: 1.5rem;
+		padding: 0.8125rem 1.25rem;
+		text-align: left;
+		@include transition(
+			background-color variable('transition'),
+			color variable('transition')
+		);
+		width: 100%;
+
+		&:hover {
+			background-color: rgba(color('night-rider'), 1);
+			color: color('smoke');
+
+			.phone__path.phone__path--first {
+				stroke: color('smoke');
+			}
+		}
+	}
+
+	.phone__button.phone__button--first.phone__button--active .phone__icon.phone__icon--first {
+		@include transform(translate(50%, -50%) rotate(180deg));
+	}
+
+	.phone__link.phone__link--second {
+		background-color: rgba(color('mortar'), 0);
+		color: color('mortar');
+		display: block;
+		font-size: 1.125rem;
+		font-weight: 500;
+		line-height: 1.375rem;
+		padding: 0.25rem 2.5rem;
+		@include transition(
+			background-color variable('transition'),
+			color variable('transition')
+		);
+		width: 100%;
+
+		&:hover {
+			background-color: rgba(color('mortar'), 1);
+			color: color('smoke');
+		}
+	}
+
+	.phone__icon.phone__icon--first {
+		position: absolute;
+		right: 2.1875rem;
+		top: 50%;
+		@include transform(translate(50%, -50%) rotate(0deg));
+		@include transition(transform variable('transition'));
+
+		&.phone__icon--horizontal {
+			height: 0.9375rem;
+			width: 1.5625rem;
+		}
+
+		&.phone__icon--vertical {
+			height: 1.5625rem;
+			width: 0.9375rem;
+		}
+	}
+
+	.phone__path.phone__path--first {
+		fill: none;
+		stroke: color('eclipse');
+		stroke-linecap: round;
+		stroke-width: 2;
+		@include transition(stroke variable('transition'));
+	}
+
+	.phone__separator.phone__separator--first {
+		background-color: color('white-smoke');
+		height: 0.0625rem;
+		margin: 0rem 1.25rem;
+	}
+}
+
+@include breakpoint('tablet') {
+	.phone {
+		padding: 1.25rem 0rem;
+
+		.phone__button.phone__button--first,
+		.phone__link.phone__link--first {
+			padding: 0.8125rem 1.875rem;
+		}
+
+		.phone__icon.phone__icon--first {
+			right: 2.8125rem;
+		}
+
+		.phone__separator.phone__separator--first {
+			margin: 0rem 1.875rem;
+		}
+	}
+}

@@ -21,6 +21,8 @@ $colors: (
 
 $variables: (
 	'elevator':   1s,
+	'navigation': 0.25s,
+	'sandwich':   0.25s,
 	'transition': 0.25s,
 );
 
@@ -36,7 +38,7 @@ $variables: (
 };
 
 $elements: (
-	'article', 'aside', 'body', 'div', 'figure', 'footer', 'h1', 'h3', 'li', 'main', 'nav', 'p', 'section', 'ul',
+	'article', 'aside', 'body', 'div', 'figure', 'footer', 'h2', 'h3', 'h4', 'header', 'li', 'main', 'nav', 'p', 'section', 'ul',
 	'button', 'form', 'input', 'label',
 	'a', 'em', 'span', strong,
 	'g', 'img', 'path', 'svg',
@@ -68,8 +70,13 @@ $elements: (
 	'Modules',
 
 	'Partials/Articles',
+	'Partials/Desktop',
 	'Partials/Elevator',
 	'Partials/Features',
 	'Partials/Footer',
+	'Partials/Header',
 	'Partials/Hero',
-	'Partials/Newsletter';
+	'Partials/Logo',
+	'Partials/Newsletter',
+	'Partials/Phone',
+	'Partials/Sandwich';

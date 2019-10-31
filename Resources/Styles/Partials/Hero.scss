@@ -1,4 +1,5 @@
 .hero {
+	overflow: hidden;
 	width: 100%;
 
 	.hero__light,
@@ -80,6 +81,11 @@
 		height: 3.4375rem;
 		padding: 1.03125rem 2.1875rem;
 		text-align: center;
+		@include transition(background-color variable('transition'));
+
+		&:hover {
+			background-color: color('rodeo-dust');
+		}
 	}
 }
 

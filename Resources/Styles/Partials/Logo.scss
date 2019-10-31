@@ -1,0 +1,24 @@
+.logo {
+	min-width: 5.625rem;
+	width: 5.625rem;
+
+	.logo__link {
+		display: block;
+	}
+
+	.logo__path {
+		&.logo__path--primary {
+			fill: color('rodeo-dust');
+		}
+
+		&.logo__path--secondary {
+			fill: color('eclipse');
+		}
+	}
+}
+
+@include breakpoint('laptop') {
+	.logo {
+		width: 7.5rem;
+	}
+}
