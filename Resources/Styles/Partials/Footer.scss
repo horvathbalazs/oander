@@ -35,6 +35,11 @@
 		margin: 0rem auto;
 		padding: 0.375rem 0.9375rem;
 		text-align: center;
+		@include transition(color variable('transition'));
+
+		&:hover {
+			color: color('rodeo-dust');
+		}
 	}
 
 	.footer__space {
